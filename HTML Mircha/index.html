@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -- Entre 55 y 65 carácteres -->
+    <title>Curso HTML & CSS: Fundamentos HTML ( 1 / 5 ) - jonmircha </title>
+    <!-- Descripción -- no más de 165 caracteres  -->
+    <meta name="description" content="En esta página estamos aprendiendo los fundamentos de HTML con @jonmircha">
+</head>
+
+<body>
+    <h2>Encabezados HTML</h2>
+    <h1>ASDADSADS 1</h1>
+    <h2>ASDASDADSA 2</h2>
+    <h3>ASDASDADSA 3</h3>
+    <h4>ASDASDADSA 4</h4>
+    <h5>ASDASDADSA 5</h5>
+    <h6>ASDASDASDA 6</h6>
+    <hr>
+    <h2>Etiquetas de Texto Básicas</h2>
+    <p> <strong>Palabras en : </strong><b>negrita</b> <u>Subrayado</u> e= mc <sup>2</sup> H <sub>2</sub>O <mark>Marca
+            texto</mark>
+        <small>Letras pequeñas</small>
+    </p>
+    <hr>
+    <h2>Etiquetas de Texto Semánticas</h2>
+    <p><strong>Este texto es importante</strong>. <em>Este texto hace énfasis</em></p>
+    <blockquote> Yo sólo sé que no sé nada.</blockquote>
+    <cite>Sócrates</cite>
+    <hr>
+    <h2>Etiquetas de Saltos.</h2>
+    <p>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Natus accusamus laborum delectus porro, fugiat
+        unde qui nemo voluptatibus <br> pariatur numquam nobis doloremque dolores inventore eveniet? <br>Quisquam
+        recusandae
+        maiores tempora facilis?</p>
+    <hr>
+    <h2>Etiquetas de Formateo</h2>
+    <p>
+    <pre>
+        <strong><u>Tareas por hacer:</u></strong>
+        • HTML
+            -Terminar de grabar las secciones del curso.
+            - Editar en un sólo video.
+        • CSS
+            - Comenzar a grabar secciones CSS
+            - Editar en un sólo Video
+    </pre>
+    </p>
+    <p>
+    <pre>
+        <strong><u>Código de un Scroll Top con JS</u></strong>
+        <code>
+            const d = document,
+            w = window;
+            
+            export default function scrollTopBtn(btn){
+            const $scrollBtn = d.querySelector(btn);
+            
+            w.addEventListener("scroll", e=> {
+            let scrollTop = w.pageYOffset;
+            
+            if(scrollTop > 900){
+            $scrollBtn.classList.remove("hidden");
+            }
+            else{
+            $scrollBtn.classList.add("hidden");
+            }
+            });
+            
+            d.addEventListener("click", e=> {
+            if(e.target.matches(btn)){
+            w.scrollTo({
+            behavior: "smooth",
+            top: 0,
+            });
+            }
+            });
+            }
+
+            &lt;Title/&gt;
+        </code>
+    </pre>
+    </p>
+    <hr>
+    <h2>Etiquetas Semánticas Estructurales</h2>
+    <header>header - Cabecera de un sitio web ó de sección</header>
+    <main>
+        main - Define la sección principal del documento, sólo puede existir una sóla etiqueta main.
+    </main>
+    <footer>footer - Pié de página de un sitio web o de una sección</footer>
+    <nav>nav - Representa una navegación</nav>
+    <article>article - Representa una sección autocontenido (que por sí sola se explica)</article>
+    <aside>aside - Representa contenido complementario o secundario</aside>
+    <address>address - Representa una dirección</address>
+    <hr>
+    <h2>Etiquetas de Bloque VS Etiquetas de Línea</h2>
+</body>
+
+</html>

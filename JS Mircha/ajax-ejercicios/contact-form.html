@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envío de formulario con FETCH</title>
+    <link rel="stylesheet" href="assets/contact-form.css">
+</head>
+
+<body>
+    <form target="_blank" class="contact-form" action="https://formsubmit.co/luquetti.5@hotmail.com" method="POST">
+        <legend>Envíanos tus comentarios</legend>
+
+        <input type="text" name="name" placeholder="Escribe tu nombre"
+            title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{1,50}$" required>
+
+        <input type="email" name="email" placeholder="Ingrese Email" title="Email incorrecto"
+            pattern="^[A-Za-z0-9]+(\.[A-Za-z0-9]+|-[A-Za-z0-9]+|_[A-Za-z0-9]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,15})$"
+            required>
+
+        <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+
+        <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
+            data-pattern="^^(\n|.){1,255}$" title="Tu comentario no debe exceder los 255 caracteres."
+            required></textarea>
+        <input type="submit">
+
+        <div class="contact-form-loader none">
+            <img src="../assets/rings.svg" alt="Cargando">
+        </div>
+        <div class="contact-form-response none">
+            <p>Los datos han sido envíados.</p>
+        </div>
+    </form>
+    <script src="assets/contact-form.js"></script>
+</body>
+
+</html>
