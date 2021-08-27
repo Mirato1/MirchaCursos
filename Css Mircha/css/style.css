@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*  Dar estilos con ID se considera una Mala Práctica  */
+
+#parrafo-dos {
+  color: blue;
+  background-color: yellow;
+}
+
+/* Dar estilos con clases nos permite reutilizar nuestro código CSS */
+.bg-skyblue {
+  background-color: skyblue;
+}
+
+.bg-steelblue {
+  background-color: steelblue;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+.text-20 {
+  font-size: 20px;
+}
+
+.text-white {
+  color: white;
+}
+
+/* Sólo aplica a hijos de primer nivel */
+.hijos-directos > li {
+  background-color: thistle;
+}
+
+/* Aplica a todos los hijos independientemente de su nivel */
+.hijos-descendientes b {
+  background-color: red;
+}
+
+/* Los selectores de hermanos aplican a sus hermanos que están por debajo del elemento que tiene la clase */
+.hermanos-general ~ li {
+  background-color: yellow;
+}
+
+/* SÓLO aplica los estilos al elemento que esté por debajo del selector  (Sólo 1) */
+.hermanos-adyacentes + li {
+  background-color: yellow;
+}
+
+/* Selectores de Atributo */
+.selectores-atributos a[href] {
+  color: green;
+}
+
+.selectores-atributos a[target="_blank"] {
+  color: orangered;
+  font-weight: bold;
+}
+
+/* Comodin del * Aplica el estilo si CONTIENE el texto en cuestión */
+.selectores-atributos a[href*="jonmircha"] {
+  font-size: 24px;
+}
+
+/* Comodín del ^ Aplica el estilo si EMPIEZA con el texto en cuestión */
+.selectores-atributos a[href^="https"] {
+  text-decoration: none;
+}
+
+/* Comodín del $ Aplica el estilo si TERMINA con el texto en cuestión */
+.selectores-atributos a[href$=".com"] {
+  background-color: black;
+}
+
+/* Comodín del ~ Aplica el estilo si CONTIENE el texto en cuestión en una lista separada por espacios */
+.selectores-atributos a[class~="cursos"] {
+  background-color: midnightblue;
+}
+
+/* Comodín del | Aplica el estilo si CONTIENE el texto en cuestión en una lista separada por espacios y que después del texto en cuestión haya un guión medio -  */
+.selectores-atributos a[class|="menu"] {
+  font-style: italic;
+}
+
+/* Selector Universal */
+* {
+  font-family: monospace;
+}
+
+.selector-universal * {
+  font-size: 24px;
+}
+
+/* Pseudoclases */
+
+.form-pseudoclases *:required {
+  border-color: yellow;
+}
+
+.form-pseudoclases *:valid {
+  border-color: green;
+}
+
+.form-pseudoclases *:invalid {
+  border-color: red;
+}
+
+.form-pseudoclases *:focus {
+  background-color: skyblue;
+}
+
+.form-pseudoclases *:disabled {
+  background-color: pink;
+}
+
+.menu-pseudoclases a:visited {
+  color: red;
+}
+
+/* El Hover tiene que ir al final para que no lo pisen las otras pseudoclases */
+.menu-pseudoclases a:hover {
+  color: orange;
+}
+
+.p-pseudoclases:hover {
+  font-size: 20px;
+}
+
+#temario-css:target {
+  background-color: lightgreen;
+}
+
+/* Pseudoclases */
+.lista-pseudoclases li:first-child {
+  color: rgb(3, 182, 3);
+}
+.lista-pseudoclases li:last-child {
+  color: violet;
+}
+/* 3° Hijo */
+.lista-pseudoclases li:nth-child(3) {
+  color: navy;
+}
+/* De 4 en 4  */
+.lista-pseudoclases li:nth-child(4n) {
+  font-size: 20px;
+}
+/* De 3 en 3 y le sumo 1 */
+.lista-pseudoclases li:nth-child(3n + 1) {
+  font-weight: bold;
+}
+/* PAR */
+.lista-pseudoclases li:nth-child(even) {
+  background-color: yellow;
+}
+/* IMPAR */
+.lista-pseudoclases li:nth-child(odd) {
+  background-color: orange;
+}
+
+/* Pseudoclases de TIPO */
+.articulo-pseudoclases p:first-of-type {
+  background-color: orchid;
+}
+.articulo-pseudoclases p:last-of-type {
+  background-color: aquamarine;
+}
+.articulo-pseudoclases p:nth-of-type(3) {
+  background-color: darkviolet;
+}
+/* Se puede incluir más de un elemento ya sea clases, ID etc... */
+.articulo-pseudoclases *:not(p) {
+  background-color: beige;
+}
+
+/* Pseudoelementos - Dan estilos a partes específicas de un elemento, se usa el :: para diferenciarlos de las pseudoclases */
+
+.saga-geminis::before {
+  content: "🤼‍♂️";
+}
+.saga-geminis::after {
+  content: "♊";
+}
+.saga-precio::before {
+  content: "$";
+  font-weight: bold;
+}
+.saga-precio::after {
+  content: "USD";
+  font-weight: bold;
+}
+
+/* Aplica a todas las etiquetas de bloque */
+.p-pseudoelementos::first-letter {
+  font-weight: bold;
+  font-size: 32px;
+}
+.p-pseudoelementos::first-line {
+  color: coral;
+}
+.p-pseudoelementos::selection {
+  color: greenyellow;
+  background-color: black;
+}
+
+.input-pseudoelementos::placeholder {
+  color: red;
+}
+
+/* Agrupar Selectores */
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea {
+  border-color: yellow;
+  border-width: 2px;
+  border-style: dashed;
+  background-color: black;
+  font-size: 20px;
+  display: block;
+  width: 300px;
+}
+
+/* 
+El Algoritmo de CSS: Es la forma en que el navegador aplca los estilos al documento HTML. Es vital entender este concepto para que entiendas cómo se aplican y en algunas ocasiones se sobreescriben las reglas CSS.
+    1) La Cáscada.
+    2) La Especificidad.
+    3) La Herencia.
+
+La Cáscada es el mecanismo en que el navegador aplica los estilos. Y toma en cuenta lo siguiente en este orden: 
+    1) El origen del código
+        - El User Agent (los estilos por defecto del navegador).
+        - Personalizaciones del usuario.
+        - Los estilos del autor.
+    2) La especificidad del selector.
+    3) Orden de aparición.
+
+La Especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la siguiente forma: 
+    Etiquetas y pseudoelementos -------------0,0,0,1
+    Clases, atributos y pseudoclases ----------0,0,1,0
+    Identificadores ----------------------------0,1,0,0
+    Estilos en línea ----------------------------1,0,0,0
+    !Important ------------- Rompe la especificidad
+
+La Herencia, es la capacidad de un selector de obtener (heredar) los valores de sus ancestros más cercanos, para aplicarla se usa el valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestión con el valor initial.
+https://web.dev/learn/css/inheritance/#which-properties-are-inheritable
+*/
+
+blockquote#cita-marco.cita-marco {
+  background-color: lightsteelblue;
+}
+
+blockquote {
+  background-color: burlywood;
+}
+
+#cita-marco {
+  background-color: darkgreen;
+}
+
+blockquote.cita-marco {
+  background-color: darkgoldenrod;
+}
+
+.cita-marco {
+  background-color: cornflowerblue;
+}
+
+blockquote#cita-marco {
+  background-color: lightsalmon;
+}
+
+.cita-marco cite {
+  background-color: palegoldenrod;
+}

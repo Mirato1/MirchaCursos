@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  /* padding-top: 50px; Esto es para el fixed-top */
+  overflow-x: hidden;
+}
+.header {
+  background-color: mistyrose;
+  width: 100%;
+  height: 70px;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.hero-image {
+  background-color: goldenrod;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide {
+  background-color: paleturquoise;
+  width: 100%;
+  height: 100vh;
+}
+.slide:nth-child(odd) {
+  background-color: palevioletred;
+}
+.slide-title {
+  background-color: palegreen;
+  padding: 16px;
+  text-align: center;
+  position: sticky;
+  top: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Modal */
+.modal-window {
+  background-color: black;
+  color: white;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0.5;
+  z-index: 999;
+  display: none;
+}
+
+.modal-window:target {
+  display: block;
+}
