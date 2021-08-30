@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ejercicio-3.css">
+    <title>Bootstrap y Flexbox</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow-1">
+        <section class="bg-info text-white d-flex flex-column align-items-center flex-lg-row justify-content-lg-around">
+            <article>Flex Item 1</article>
+            <article>Flex Item 2</article>
+            <article>Flex Item 3</article>
+            <article>Flex Item 4</article>
+            <article>Flex Item 5</article>
+        </section>
+        <section class="min-vh-100 hero-image text-white">
+            <div class="min-vh-100 d-flex justify-content-center align-items-center text-center">
+                <h1>Flexbox + Bootstrap están copados</h1>
+            </div>
+        </section>
+        <div class="container">
+            <section class="row align-items-lg-center">
+                <article class="col-12 col-lg-6">
+                    <h2>Título</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo nihil velit officia tenetur
+                    temporibus modi, consectetur sapiente est repellat magni vero doloremque animi reprehenderit. Cumque
+                    commodi nemo minus voluptates!
+                </article>
+                <article class="col-12 col-lg-6">
+                    <img src="https://placeimg.com/400/400/people" class="img-fluid" alt="Imagen">
+                </article>
+            </section>
+            <section class="row align-items-lg-center">
+                <article class="col-12 col-lg-6 order-lg-1">
+                    <h2>Título</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo nihil velit officia tenetur
+                    temporibus modi, consectetur sapiente est repellat magni vero doloremque animi reprehenderit. Cumque
+                    commodi nemo minus voluptates!
+                </article>
+                <article class="col-12 col-lg-6">
+                    <img src="https://placeimg.com/400/400/people" class="img-fluid" alt="Imagen">
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer class="bg-dark text-white">
+        <h4>Sticky Footer con Bootstrap</h4>
+    </footer>
+</body>
+
+</html>

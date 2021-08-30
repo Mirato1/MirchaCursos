@@ -1,0 +1,19 @@
+.hero-image {
+  background-image: url("https://placeimg.com/1920/1080/animals");
+  background-repeat: no-repeat;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.hero-image div {
+  background-color: rgba(0, 0, 0, 0.75);
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: inherit; */
+}
+
+.hero-image h1 {
+  font-size: 5vw;
+}

@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #333;
+  height: 30vh;
+  width: 100%;
+
+  display: flex; /* Ó inline-flex */
+
+  flex-direction: row;
+  /* row | row-reverse | column | column-reverse */
+
+  flex-wrap: nowrap;
+  /* nowrap | wrap | wrap-reverse */
+
+  flex-flow: row nowrap; /* Es un shortcut de flex-direction y flex-wrap*/
+
+  justify-content: flex-start;
+  /* Define la alineación de los elementos hijos respecto del eje principal 
+    flex-start | center | flex-end | space-between | space-around | space-evenly
+  */
+
+  align-items: stretch;
+  /*  Define la alineación de los hijos en el eje transversal (cross axis), dentro de cada línea
+  stretch | flex-start | flex-end | center | baseline */
+
+  align-content: flex-start;
+  /*Define la alineación de los hijos en el eje transversal (cross axis), NO funciona cuando los hijos están en UNA sóla línea (cuando flex:wrap:nowrap NO FUNCIONA)
+  flex-start | flex-end | center | space-between | space-around | space-evenly | stretch 
+   */
+}
+.item {
+  border: medium solid #999;
+  width: 34%;
+  /* height: 20%; */
+  background-color: #666;
+  /* width: 100px; */
+  flex-grow: 0;
+  /* Cuando la caja flexbox tenga espacio sobrante, es la habilidad o el factor de crecer, valor por defecto es 0, NO se aceptan valores negativos */
+
+  flex-shrink: 1;
+  /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos */
+
+  flex-basis: auto;
+  /* Es el tamaño del elemento hijo dentro de la ínea de la caja flexbox:
+        Si la caja flexbox tiene dirección de fila, flex-basis representa el width
+        Si la caja flexbox tiene dirección de columna, flex-basis representa el height
+        Valor por defecto auto
+  */
+  flex: 0 1 auto;
+  /* Es un shorthand de las propiedades flex-grow flex-shrink y flex-basis, en ese orden */
+
+  order: 0;
+  /* Representa el orden que tendrán los elementos hijos en la caja flexbox
+        Valor por defecto: 0
+        Se aceptan valores positivos y negativos
+        Un valor menor siempre irá antes que un valor mayor.
+    */
+
+  align-self: stretch;
+  /* stretch | flex-start | flex-end | center | baseline */
+  /* Sobreescribe el valor de la propiedad align-items sólo para el elemento hijo especificado */
+}
+
+/* .item:nth-child(2) {
+  flex-grow: 0;
+  flex-shrink: 2;
+} */
