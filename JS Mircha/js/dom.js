@@ -283,7 +283,6 @@ $newCard.classList.add("card");
 $cards.insertBefore($newCard, $cards.firstElementChild);
 document.body.appendChild($cloneCards);*/
 
-
 /* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
 /*
 .insertAdjacent...
@@ -311,8 +310,6 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");*/
 //$cards.before($newCard);
 //$cards.after($newCard);
 
-
-
 /* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha y Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
 /*
 Los eventos son los mecanismos que tenemos en JavaScript para controlar las acciones del usuario y definir el comportamiento del documento en cierto momento o cuando se cumplan ciertas condiciones.
@@ -320,9 +317,6 @@ Las funciones que se ejecutan en un evento se llaman Event Handler (Manejador de
 https://developer.mozilla.org/en-US/docs/Web/Events
 
 
-Fijado por jonmircha
-Grover Cristobal
-hace 1 mes (editado)
 Aquí hice unos pequeños apuntes compañeros 😀 👇
 
 /**
@@ -334,16 +328,18 @@ Aquí hice unos pequeños apuntes compañeros 😀 👇
     
     👉 Hay 3 maneras de definir los Eventos en JS : 
  */
-    
+
 /* ************************************************************************************************************************************** */
-     
-   //1️⃣ COMO ATRIBUTO DEL HTML
-    
-   //👀 Muy importante: 
-   /*👉 Esta función se va a convertir en el Manejador de Eventos (Event Handler)
-    *👉 Cuando una función se convierte en un Event Handler, es decir una función que se ejecuta en un Evento, nosostros podemos acceder a un Objeto especial q es el Evento en sí, y eso lo podemos acceder con la palabra reservada 'event'
-   */
-    /*function holaMundo(){
+
+//1️⃣ COMO ATRIBUTO DEL HTML
+
+//👀 Muy importante:
+//👀 Muy importante:
+//👀 Muy importante:
+/*👉 Esta función se va a convertir en el Manejador de Eventos (Event Handler)
+ *👉 Cuando una función se convierte en un Event Handler, es decir una función que se ejecuta en un Evento, nosostros podemos acceder a un Objeto especial q es el Evento en sí, y eso lo podemos acceder con la palabra reservada 'event'
+ */
+/*function holaMundo(){
       alert('Holaaa Mundo')
       console.log(event)  //👈 con esto en la consola, se desencadena un tipo de Objeto MouseEvent (evento del Mouse), y dentro de él se encuentran dos propiedades muy importantes: type y target.
       
@@ -352,14 +348,14 @@ Aquí hice unos pequeños apuntes compañeros 😀 👇
      
      //👉 Dentro de target estan todos los eventos y propiedades q se pueden usar por dicho elemento y los q estan en null son eventos q no tienen definida dicha función en dichos eventos. En cambio vemos el evento onclick q si tiene definida la funcion holaMundo
    }*/
-   
+
 /* *************************************************************************************************************************************** */
-   
-  //2️⃣ COMO MANEJADOR SEMÁNTICO
-   
-  //👉 Se le dice manejador semántico xq va teniendo una coherencia en la manera como la vamos definiendo
-  //👉 cuando definamos un evento como semántico igualamos el evento semántico al nombre de la funcion pero sin /(), xq los () hacen q cuando se cargue el Navegador se va a ejecutar
- /*  const $eventoSemantico = document.getElementById('evento-semantico')
+
+//2️⃣ COMO MANEJADOR SEMÁNTICO
+
+//👉 Se le dice manejador semántico xq va teniendo una coherencia en la manera como la vamos definiendo
+//👉 cuando definamos un evento como semántico igualamos el evento semántico al nombre de la funcion pero sin /(), xq los () hacen q cuando se cargue el Navegador se va a ejecutar
+/*  const $eventoSemantico = document.getElementById('evento-semantico')
    $eventoSemantico.onclick = holaMundo //👈 no le ponemos () a la función xq sino al momento q se recarga el Navegador, se estará ejecutando el evento, y luego la consola nos dará undefined, xq el objeto event q mandamos a la consola no estará definido, xq la función se ejecutó asi como va, osea a la hora de cargar como tiene los parentesis se ejecuta.
    
   //👇 esta es otra manera de definir un Evento de tipo semántico, puede ser una función anónima o una arrow function
@@ -370,11 +366,11 @@ Aquí hice unos pequeños apuntes compañeros 😀 👇
     }
    
 /* ************************************************************************************************************************************** */
-    
-  //3️⃣ COMO MANEJADOR MÚLTIPLE
-  
-  //👉 Si deseamos asignar varias funciones a un mismo elemento, tenemos el método .addEventListener() que nos perimite levantar un Escuchador de Eventos
- /* const $eventoMultiple = document.getElementById('evento-multiple')
+
+//3️⃣ COMO MANEJADOR MÚLTIPLE
+
+//👉 Si deseamos asignar varias funciones a un mismo elemento, tenemos el método .addEventListener() que nos perimite levantar un Escuchador de Eventos
+/* const $eventoMultiple = document.getElementById('evento-multiple')
   //👇 este método .addEventListener() recibe varios parámetros, pero sólo nos enfocaremos en 2:
   // 1° Nombre de evento
   // 2° Función q se va a ejecutar, pero sin parentesis
@@ -388,14 +384,15 @@ Aquí hice unos pequeños apuntes compañeros 😀 👇
      console.log(e.target)
      console.log(event)
   } )*/
-     
-  //📝NOTA:
-  //👉 Cuando escuchemos de Event Handler hacemos referencia a la función q se ejecuta en dicho Evento   
-  //👉 Una misma función nos puede servir para desencadenar eventos en diferentes elementos
-  //👉 Los eventos semánticos tienen un pequeño inconveniente, si nos damos cuenta, cuando hablabamos de los Prototipos y hablamos de la funcion constructora, y si queriamos agregarle más métodos teniamos q agregarle a su Prototipo, aqui pasa algo similar, el onclick es como agregarle un método al Prototipo del Modelo de eventos del elemento del DOM q se estamos manejando
-  //👉 Habrá veces q a lo mejor a un mismo elemento Html le asignemos diferentes Manejadores de Eventos, es decir diferentes funciones q hagan diferentes cosas, bueno la limitante q tienen los eventos de tipo semántico, es q una vez q esta definido el evento semántico sólo va poder ejecutar una función.
-  //👉 Toda función q se convierte en un Manejador de Eventos, es decir una función q se ejecuta en algún momento en un evento no puede recibir parámetros, el único parámetro q recibe es el evento en sí, que lo podemos obtener con la palabra 'event' o en algunos casos abreviar con la letra 'e'
 
+//📝NOTA:
+//👉 Cuando escuchemos de Event Handler hacemos referencia a la función q se ejecuta en dicho Evento
+//👉 Cuando escuchemos de Event Handler hacemos referencia a la función q se ejecuta en dicho Evento
+//👉 Cuando escuchemos de Event Handler hacemos referencia a la función q se ejecuta en dicho Evento
+//👉 Una misma función nos puede servir para desencadenar eventos en diferentes elementos
+//👉 Los eventos semánticos tienen un pequeño inconveniente, si nos damos cuenta, cuando hablabamos de los Prototipos y hablamos de la funcion constructora, y si queriamos agregarle más métodos teniamos q agregarle a su Prototipo, aqui pasa algo similar, el onclick es como agregarle un método al Prototipo del Modelo de eventos del elemento del DOM q se estamos manejando
+//👉 Habrá veces q a lo mejor a un mismo elemento Html le asignemos diferentes Manejadores de Eventos, es decir diferentes funciones q hagan diferentes cosas, bueno la limitante q tienen los eventos de tipo semántico, es q una vez q esta definido el evento semántico sólo va poder ejecutar una función.
+//👉 Toda función q se convierte en un Manejador de Eventos, es decir una función q se ejecuta en algún momento en un evento no puede recibir parámetros, el único parámetro q recibe es el evento en sí, que lo podemos obtener con la palabra 'event' o en algunos casos abreviar con la letra 'e'
 
 /*function holaMundo(event) {
   alert("Hola Mundo");
@@ -432,7 +429,6 @@ const removerDobleClick = (e) => {
 };
 $eventoRemover.addEventListener("dblclick", removerDobleClick); */
 
-
 /* **********     Curso JavaScript: 74. DOM: Flujo de Eventos (Burbuja y Captura) - #jonmircha     ********** */
 /*
 Si no se especifica el parámetro boolean, el valor por defecto es false.
@@ -456,7 +452,7 @@ $divsEventos.forEach((div) => {
     capture: false,
     once: true,
   });
-});*/
+});
 
 /* **********     Curso JavaScript: 75. DOM: stopPropagation & preventDefault - #jonmircha     ********** */
 /*const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
@@ -505,7 +501,6 @@ document.addEventListener("click", (e) => {
     //e.stopPropagation();
   }
 }); */
-
 
 /* **********     Curso JavaScript: 77. BOM: Propiedades y Eventos - #jonmircha     ********** */
 /*
@@ -591,5 +586,3 @@ console.log(navigator.serviceWorker);
 console.log(navigator.storage);
 console.log(navigator.usb);
 console.log(navigator.userAgent);*/
-
-

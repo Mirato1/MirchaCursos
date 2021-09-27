@@ -1,6 +1,6 @@
-const d= document;
 
 export default function scrollSpy(){
+    const d= document;
     const $sections = d.querySelectorAll("section[data-scroll-spy]");
 
     const cb = (entries) => {
